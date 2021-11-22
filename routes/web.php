@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/', [App\Http\Controllers\WalletController::class, 'index'])->name('wallet');
+
+Route::get('/')->name('wallet')->uses('App\Http\Controllers\WalletController@index');
