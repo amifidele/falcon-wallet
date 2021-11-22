@@ -1,3 +1,5 @@
+import '../css/style.css'
+
 import React from 'react';
 import { render } from 'react-dom';
 import { InertiaApp } from '@inertiajs/inertia-react';
@@ -5,7 +7,7 @@ import { InertiaProgress } from '@inertiajs/progress';
 import * as Sentry from '@sentry/browser';
 
 InertiaProgress.init({
-  color: '#ED8936',
+  color: '#089363',
   showSpinner: true
 });
 
