@@ -28,6 +28,7 @@
         "@inertiajs/inertia": "^0.10.1",
         "@inertiajs/inertia-react": "^0.7.1",
         "@inertiajs/progress": "^0.2.6",
-        "@sentry/browser": "^6.15.0"
+        "@sentry/browser": "^6.15.0",
+        "react-icons": "^4.3.1"
     }
 }

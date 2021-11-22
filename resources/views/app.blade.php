@@ -9,7 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    {{-- @routes --}}
+    @routes
 </head>
 <body>
     @inertia

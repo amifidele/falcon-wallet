@@ -5,6 +5,8 @@ use Inertia\Inertia;
 
 use Illuminate\Http\Request;
 
+use Auth;
+
 class PagesController extends Controller
 {
     
@@ -24,7 +26,7 @@ class PagesController extends Controller
 
     public function header(){
         return Inertia::render('Header', [
-            'authUser' => Auth::user()->name
+            'authUser' => Auth::user()
         ]);
     }
 

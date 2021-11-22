@@ -16,11 +16,14 @@ use Illuminate\Support\Facades\Route;
 // Auth::routes();
 
 
-Route::get('/')->name('wallet')->uses('App\Http\Controllers\WalletController@index');
+Route::get('/')->name('wallet')->uses('App\Http\Controllers\WalletController@index')->middleware('auth');
 
-Route::get('/login')->name('login')->uses('App\Http\Controllers\PagesController@login');
-Route::get('/register')->name('register')->uses('App\Http\Controllers\PagesController@register');
 
-Route::get('/register')->name('signup.attempt')->uses('App\Http\Controllers\Auth\RegisterController@register ');
+Route::get('login')->name('login')->uses('App\Http\Controllers\PagesController@login');
+Route::get('register')->name('register')->uses('App\Http\Controllers\PagesController@register');
 
-Route::get('/login')->name('login.attempt')->uses('App\Http\Controllers\Auth\LoginController@login');
+Route::post('register')->name('signup.attempt')->uses('App\Http\Controllers\Auth\RegisterController@register');
+
+Route::post('login')->name('login.attempt')->uses('App\Http\Controllers\Auth\LoginController@login');
+
+Route::post('logout')->name('logout')->uses('App\Http\Controllers\Auth\LoginController@logout');

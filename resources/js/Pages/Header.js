@@ -1,9 +1,16 @@
-import { Link, usePage  } from '@inertiajs/inertia-react';
+
+import { Link, usePage } from '@inertiajs/inertia-react';
 
 
-export default function Header(){
+export default function Header(props){
 
     const { user } = usePage().props;
+
+    function handleLogout(e) {
+        e.preventDefault();
+        post(route('logout'));
+    }
+
 
     return(
     <div>
@@ -29,7 +36,10 @@ export default function Header(){
                    
                 ): (
                     <li className="mx-3">
-                       <Link href="/logout"> Logout </Link>
+                        <Link
+                        as="button"
+                        href={route('logout')}
+                        method="post">Logout</Link>
                     </li>
                 )
 

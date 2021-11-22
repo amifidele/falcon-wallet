@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Inertia\Inertia;
 
+use Auth;
+
 class WalletController extends Controller
 {
     /**
@@ -15,7 +17,11 @@ class WalletController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Wallet/WalletIndex');
+
+        return Inertia::render('Wallet/WalletIndex', [
+            'user' => Auth::user()
+        ]);
+
     }
 
     /**
