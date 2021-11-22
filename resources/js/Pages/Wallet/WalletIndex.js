@@ -13,6 +13,8 @@ export default function WalletIndex(props){
     const { user } = usePage().props;
     const { balance } = usePage().props;
 
+    
+
     const usd = parseFloat(balance) * 5;
 
     const euro = parseFloat(balance) * 6;
