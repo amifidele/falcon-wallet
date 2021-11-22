@@ -1,7 +1,9 @@
 
 import React, {useState, useEffect} from 'react'
 
-export default function WalletCurrency(){
+import Skeleton from 'react-loading-skeleton'
+
+export default function ChfCurrency(props){
 
     const [state, setData] = useState({
         rates: ''
@@ -22,17 +24,20 @@ export default function WalletCurrency(){
 
     const value = ratesList.rates
 
+    const balance = props.balance;
 
-    console.log(value)
+    const currencies = value?.map(currency => 
+        <li key={currency.no}> <b>{ balance / currency.mid}</b> {ratesList.currency} ( {ratesList.code} )  </li>
+    )
+
+
+    console.log(balance)
 
 
     return(
-        <div className="text-2xl">
+        <div className="text-lg">
 
-           <li>{value?.no}</li>
-            Hello
-
-            
+            <ul>{currencies || <Skeleton/>}</ul>
 
         </div>
     );

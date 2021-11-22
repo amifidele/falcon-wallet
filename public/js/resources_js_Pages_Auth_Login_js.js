@@ -27,8 +27,7 @@ function Login() {
       data = _useForm.data,
       setData = _useForm.setData,
       errors = _useForm.errors,
-      post = _useForm.post,
-      processing = _useForm.processing;
+      post = _useForm.post;
 
   function handleSubmit(e) {
     e.preventDefault();

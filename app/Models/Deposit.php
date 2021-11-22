@@ -9,6 +9,12 @@ class Deposit extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'wallet_id',
+        'amount',
+    ];
+
+
     public function wallet(){
        return $this->belongsTo(Wallet::class, wallet_id);
     }

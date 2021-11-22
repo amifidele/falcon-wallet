@@ -5,7 +5,7 @@ import Header from '../Header'
 
 export default function Login(){
 
-    const { data, setData, errors, post, processing } = useForm({
+    const { data, setData, errors, post } = useForm({
         email: '',
         password: '',
         remember: true

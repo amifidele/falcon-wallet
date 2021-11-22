@@ -3,7 +3,7 @@ import Header from '../Header'
 
 export default function Register(){
 
-    const { data, setData, post, errors, processing } = useForm({
+    const { data, setData, post, errors } = useForm({
         name: '',
         email: '',
         password: '',

@@ -1,10 +1,11 @@
 import '../css/style.css'
-
+import '../css/tailwind.css'
 import React from 'react';
 import { render } from 'react-dom';
 import { InertiaApp } from '@inertiajs/inertia-react';
 import { InertiaProgress } from '@inertiajs/progress';
 import * as Sentry from '@sentry/browser';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 InertiaProgress.init({
   color: '#089363',

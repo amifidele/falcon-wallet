@@ -28,8 +28,7 @@ function Register() {
       data = _useForm.data,
       setData = _useForm.setData,
       post = _useForm.post,
-      errors = _useForm.errors,
-      processing = _useForm.processing;
+      errors = _useForm.errors;
 
   function handleSubmit(e) {
     e.preventDefault();

@@ -1,8 +1,11 @@
 
 import Header from '../Header'
 import { FaWallet } from "react-icons/fa";
+import Deposit from './Deposit';
 
-import WalletCurrency from './WalletCurrency';
+import UsdCurrency from './UsdCurrency'
+import ChfCurrency from './ChfCurrency';
+import GbpCurrency from './GbpCurrency';
 
 import { Link, usePage } from '@inertiajs/inertia-react';
 
@@ -17,11 +20,11 @@ export default function WalletIndex(props){
 
 
 
-    const usd = parseFloat(balance) * 5;
+    const usd = parseFloat(balance) * 0.55;
 
-    const euro = parseFloat(balance) * 6;
+    const euro = parseFloat(balance) * 4.8990;
 
-    const pound = parseFloat(balance) * 5;
+    const pound = parseFloat(balance) * 5.002;
 
 
     return(
@@ -29,25 +32,29 @@ export default function WalletIndex(props){
             <Header/>
             {/* <WalletCurrency/> */}
 
-            <div className="w-50 mx-auto shadow rounded px-2 py-6 mt-10">
+            <div className="w-65 mx-auto shadow rounded px-2 py-12 mt-10">
 
                 <div className="text-center text-grey-darker">
-                     <h1 className="text-xl font-bold">Welcome {user.name}, to your Wallet!</h1>
+                     <h1 className="text-xl font-bold">Hi {user.name}, Welcome to your Wallet!</h1>
                 </div>
 
-                <div className="w-90 mx-auto flex text-grey-dark px-4 py-5">
+                <div className="w-90 mx-auto flex text-grey-dark px-4 py-2 pb-8">
 
-                    <div className="w-30 text-12xl text-green-dark text-left pt-10">
+                    <div className="w-25 text-12xl text-green-dark text-left pt-10">
 
                         <FaWallet/>
 
                     </div>
-                    <div className="w-60 pt-0 pl-4">
+                    <div className="w-60 pt-0 ">
                         <p className="font-bold">Balance</p>
-                        <h1 className="text-lg text-green">{balance} PLN</h1>
-                        <h1 className="text-lg">{usd} USD</h1>
-                        <h1 className="text-lg">{euro} Euro</h1>
-                        <h1 className="text-lg">{pound} Pound</h1>
+                        
+                        <p className="text-lg text-green -mt-3"><b>{balance}</b> Polish złoty ( NBP )</p>
+
+                        <p className="text-lg">Your Balance in other currencies</p>
+
+                        <UsdCurrency balance={balance} />
+                        <ChfCurrency balance={balance} />
+                        <GbpCurrency balance={balance} />
                     </div>
 
 
@@ -55,8 +62,11 @@ export default function WalletIndex(props){
 
                 <div className="w-80 mx-auto  font-bold">
 
-                    <div className="w-50 mx-auto">
-                        <button className="bg-green-dark btn w-100 text-white">Deposit</button>
+                    
+
+                    <div className="w-50 mx-auto mt-8">
+                    <Deposit wallet={user.wallet.id}/>
+                        
                     </div>
 
                     

@@ -27,3 +27,5 @@ Route::post('register')->name('signup.attempt')->uses('App\Http\Controllers\Auth
 Route::post('login')->name('login.attempt')->uses('App\Http\Controllers\Auth\LoginController@login');
 
 Route::post('logout')->name('logout')->uses('App\Http\Controllers\Auth\LoginController@logout');
+
+Route::post('deposit')->name('deposit.attempt')->uses('App\Http\Controllers\DepositeController@store');
