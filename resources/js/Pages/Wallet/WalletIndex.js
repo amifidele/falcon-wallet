@@ -7,6 +7,7 @@ import { Link, usePage } from '@inertiajs/inertia-react';
 export default function WalletIndex(props){
 
     const { user } = usePage().props;
+    const { balance } = usePage().props;
 
     return(
         <div>
@@ -27,7 +28,7 @@ export default function WalletIndex(props){
                     </div>
                     <div className="w-60 pt-4 pl-4 font-bold">
                         <p>Balance</p>
-                        <h1 className="text-xl">12, 000 PLN</h1>
+                        <h1 className="text-xl">{balance} PLN</h1>
                     </div>
 
                 </div>

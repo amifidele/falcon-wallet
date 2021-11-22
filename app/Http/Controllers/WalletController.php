@@ -17,9 +17,11 @@ class WalletController extends Controller
      */
     public function index()
     {
+        $balance = Auth::user()->wallet->balance;
 
         return Inertia::render('Wallet/WalletIndex', [
-            'user' => Auth::user()
+            'user' => Auth::user(),
+            'balance' => $balance
         ]);
 
     }
