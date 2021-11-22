@@ -48161,52 +48161,42 @@ module.exports = function (list, options) {
 var map = {
 	"./Auth/Login": [
 		"./resources/js/Pages/Auth/Login.js",
-		9,
 		"resources_js_Pages_Auth_Login_js"
 	],
 	"./Auth/Login.js": [
 		"./resources/js/Pages/Auth/Login.js",
-		9,
 		"resources_js_Pages_Auth_Login_js"
 	],
 	"./Auth/Register": [
 		"./resources/js/Pages/Auth/Register.js",
-		7,
 		"resources_js_Pages_Auth_Register_js"
 	],
 	"./Auth/Register.js": [
 		"./resources/js/Pages/Auth/Register.js",
-		7,
 		"resources_js_Pages_Auth_Register_js"
 	],
 	"./Header": [
 		"./resources/js/Pages/Header.js",
-		9,
 		"resources_js_Pages_Header_js"
 	],
 	"./Header.js": [
 		"./resources/js/Pages/Header.js",
-		9,
 		"resources_js_Pages_Header_js"
 	],
 	"./Index": [
 		"./resources/js/Pages/Index.js",
-		9,
 		"resources_js_Pages_Index_js"
 	],
 	"./Index.js": [
 		"./resources/js/Pages/Index.js",
-		9,
 		"resources_js_Pages_Index_js"
 	],
 	"./Wallet/WalletIndex": [
 		"./resources/js/Pages/Wallet/WalletIndex.js",
-		9,
 		"resources_js_Pages_Wallet_WalletIndex_js"
 	],
 	"./Wallet/WalletIndex.js": [
 		"./resources/js/Pages/Wallet/WalletIndex.js",
-		9,
 		"resources_js_Pages_Wallet_WalletIndex_js"
 	]
 };
@@ -48220,8 +48210,8 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[2]).then(() => {
-		return __webpack_require__.t(id, ids[1] | 16)
+	return __webpack_require__.e(ids[1]).then(() => {
+		return __webpack_require__(id);
 	});
 }
 webpackAsyncContext.keys = () => (Object.keys(map));
@@ -48325,36 +48315,6 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/create fake namespace object */
-/******/ 	(() => {
-/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
-/******/ 		var leafPrototypes;
-/******/ 		// create a fake namespace object
-/******/ 		// mode & 1: value is a module id, require it
-/******/ 		// mode & 2: merge all properties of value into the ns
-/******/ 		// mode & 4: return value when already ns object
-/******/ 		// mode & 16: return value when it's Promise-like
-/******/ 		// mode & 8|1: behave like require
-/******/ 		__webpack_require__.t = function(value, mode) {
-/******/ 			if(mode & 1) value = this(value);
-/******/ 			if(mode & 8) return value;
-/******/ 			if(typeof value === 'object' && value) {
-/******/ 				if((mode & 4) && value.__esModule) return value;
-/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
-/******/ 			}
-/******/ 			var ns = Object.create(null);
-/******/ 			__webpack_require__.r(ns);
-/******/ 			var def = {};
-/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
-/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
-/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
-/******/ 			}
-/******/ 			def['default'] = () => (value);
-/******/ 			__webpack_require__.d(ns, def);
-/******/ 			return ns;
 /******/ 		};
 /******/ 	})();
 /******/ 	

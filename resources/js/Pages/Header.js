@@ -1,9 +1,9 @@
-import { Link  } from '@inertiajs/inertia-react';
+import { Link, usePage  } from '@inertiajs/inertia-react';
 
 
 export default function Header(){
 
-    
+    const { user } = usePage().props;
 
     return(
     <div>
@@ -15,21 +15,28 @@ export default function Header(){
 
             </div>
 
-            <div className="w-50 pt-3 text-right">
+            <div className="w-50 pt-3  text-right">
 
                 <ul className="list inline-block">
                     <li className="mx-3">
                        <Link href="/"> Wallet </Link>
                     </li>
+                {!user ?
+                (
                     <li className="mx-3">
                        <Link href="/login"> Login </Link>
                     </li>
-                    <li className="mx-3">
-                       <Link href="/register"> Register </Link>
-                    </li>
+                   
+                ): (
                     <li className="mx-3">
                        <Link href="/logout"> Logout </Link>
                     </li>
+                )
+
+                }
+
+                    
+                    
                 </ul>
 
             </div>

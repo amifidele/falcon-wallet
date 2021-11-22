@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/')->name('wallet')->uses('App\Http\Controllers\WalletController@index');
+
+Route::get('/login')->name('login')->uses('App\Http\Controllers\PagesController@login');
+Route::get('/register')->name('register')->uses('App\Http\Controllers\PagesController@register');
+
+Route::get('/register')->name('signup.attempt')->uses('App\Http\Controllers\Auth\RegisterController@register ');
+
+Route::get('/login')->name('login.attempt')->uses('App\Http\Controllers\Auth\LoginController@login');

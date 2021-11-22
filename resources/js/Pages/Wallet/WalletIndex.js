@@ -9,13 +9,15 @@ export default function WalletIndex(){
 
             <div className="w-70 mx-auto px-2 py-6">
 
-                <div className="">
-                     <h1>Wallet</h1>
+                <div className="text-center">
+                     <h1 className="text-xl font-bold">Welcome Nimana, to your Wallet!</h1>
                 </div>
 
             </div>
 
-            <h1 className="text-center text-2xl">Hello Everyone</h1>
+            <div className="">
+
+            </div>
 
         </div>
         )
