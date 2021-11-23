@@ -16,9 +16,9 @@ export default function Header(props){
     <div>
         <div className="w-100 flex shadow px-8">
 
-            <div className="w-50">
+            <div className="w-50 ">
 
-                <h1 className="text-2xl font-bold">Falcon Wallet</h1>
+                <h1 className="text-2xl font-bold text-gray-300">Falcon Wallet</h1>
 
             </div>
 

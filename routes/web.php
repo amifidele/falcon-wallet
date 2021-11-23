@@ -29,3 +29,4 @@ Route::post('login')->name('login.attempt')->uses('App\Http\Controllers\Auth\Log
 Route::post('logout')->name('logout')->uses('App\Http\Controllers\Auth\LoginController@logout');
 
 Route::post('deposit')->name('deposit.attempt')->uses('App\Http\Controllers\DepositeController@store');
+Route::get('deposit')->name('deposit')->uses('App\Http\Controllers\DepositeController@index');

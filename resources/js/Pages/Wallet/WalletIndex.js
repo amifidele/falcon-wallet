@@ -18,13 +18,7 @@ export default function WalletIndex(props){
     const { user } = usePage().props;
     const { balance } = usePage().props;
 
-
-
-    const usd = parseFloat(balance) * 0.55;
-
-    const euro = parseFloat(balance) * 4.8990;
-
-    const pound = parseFloat(balance) * 5.002;
+    
 
 
     return(
@@ -65,8 +59,15 @@ export default function WalletIndex(props){
                     
 
                     <div className="w-50 mx-auto mt-8">
-                    <Deposit wallet={user.wallet.id}/>
-                        
+
+                        <Link href="/deposit">
+
+                        <button className="btn w-60 -ml-4 bg-green-dark text-white mt-4 ">
+                            Deposit
+                        </button>
+
+                        </Link>
+                            
                     </div>
 
                     

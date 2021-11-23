@@ -2,12 +2,15 @@ import { useState } from "react"
 import React from 'react';
 import Popup from 'reactjs-popup';
 import { useForm, Link, usePage  } from '@inertiajs/inertia-react';
+import Header from '../Header'
 
 
 export default function Deposit(props){
 
+    const { user } = usePage().props
+
     const { data, setData, errors, post } = useForm({
-        wallet_id: props.wallet,
+        wallet_id: user.wallet.id,
         amount: '',
       });
     
@@ -19,51 +22,42 @@ export default function Deposit(props){
 
 
     return(
+
         <div>
 
-            <Popup
-                trigger={<button className="bg-green-dark btn w-100 text-white">Deposit</button>}
-                modal
-                nested
-            >
-                {close => (
-                <div className="modalo w-100 mx-auto bg-green-light shadow-4xl mt-16">
-                    
-                    <div className="header"> <h1 className="text-xl font-bold">Make New Deposition</h1> </div>
-                    <div className="content py-20 px-5">
-                    {' '}
-                    <form onSubmit={handleSubmit}>
+            <Header/>
 
-                        <div>
-                            <label>Amount (NBP)</label>
-                            <input type="text" className="form-input shadow-none"
-                            name="amount" value={data.amount} onChange={e => setData('amount', e.target.value)} />
-                        </div>
 
-                        <button className="btn bg-green-dark text-white mt-4 ">
-                            Deposite
-                        </button>
+            <div className="w-40 mx-auto shadow rounded text-grey-darker px-8 pt-6 pb-24 mt-10">
 
-                    </form>
-                    </div>
-                    <div className="actions pb-6">
+                <h1 className="text-2xl font-bold text-center">Make New Deposit</h1>
 
                         
-                        <button
-                            className="btn border-white"
-                            onClick={() => {
-                            console.log('modal closed ');
-                            close();
-                            }}
-                        >
-                            close 
+
+                <form onSubmit={handleSubmit}>
+
+                    <div>
+                        <label>Amount (NBP)</label>
+                        <input type="integer" className="form-input shadow-none"
+                        name="amount" value={data.amount} onChange={e => setData('amount', e.target.value)} />
+                    </div>
+                    <div className="text-center">
+                        <button className="btn bg-green-dark w-50 text-white mt-8 ">
+                            Deposite
                         </button>
                     </div>
-                </div>
-                )}
-            </Popup>
+
+                    
+
+                </form>
+            
+
+            </div>
+
 
         </div>
+
+        
         )
 
 }

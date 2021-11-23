@@ -25,9 +25,6 @@ class WalletController extends Controller
 
         $totalAmount = $deposits_amounts + $walletBalance;
 
-        // dd($totalAmount);
-
-        
 
         return Inertia::render('Wallet/WalletIndex', [
             'user' => Auth::user(),
