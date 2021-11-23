@@ -10,7 +10,7 @@ export default function UsdCurrency(props){
     });
     
     const fetchData = async () => {
-        const api = await fetch("https://api.nbp.pl/api/exchangerates/rates/a/usd/today/?format=json");
+        const api = await fetch("https://api.nbp.pl/api/exchangerates/rates/a/usd/?format=json");
         setData({
             rates: await api.json()
         });

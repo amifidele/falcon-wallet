@@ -10,7 +10,7 @@ export default function ChfCurrency(props){
     });
     
     const fetchData = async () => {
-        const api = await fetch("https://api.nbp.pl/api/exchangerates/rates/a/chf/today/?format=json");
+        const api = await fetch("https://api.nbp.pl/api/exchangerates/rates/a/chf/?format=json");
         setData({
             rates: await api.json()
         });

@@ -65,7 +65,7 @@ function UsdCurrency(props) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return fetch("https://api.nbp.pl/api/exchangerates/rates/a/usd/today/?format=json");
+              return fetch("https://api.nbp.pl/api/exchangerates/rates/a/usd/?format=json");
 
             case 2:
               api = _context.sent;
